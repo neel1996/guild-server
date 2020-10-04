@@ -1,0 +1,3 @@
+#gitignore for golang guild server
+
+src/config/
