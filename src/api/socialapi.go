@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/neel1996/guild/src/config"
-	"github.com/neel1996/guild/src/model"
+	"github.com/neel1996/guild-server/src/config"
+	"github.com/neel1996/guild-server/src/model"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -34,7 +34,7 @@ func socialMongoModel() []model.SocialData {
 		panic(err)
 	}
 
-	collection := client.Database("guild").Collection("social")
+	collection := client.Database(config.GetDBName()).Collection("social")
 	res, err := collection.Find(ctx, bson.M{})
 
 	if err != nil {
@@ -45,7 +45,7 @@ func socialMongoModel() []model.SocialData {
 	var socialData []model.SocialData
 	res.All(ctx, &socialData)
 
-	fmt.Println(socialData)
+	fmt.Println("Data : ", socialData)
 
 	return socialData
 }

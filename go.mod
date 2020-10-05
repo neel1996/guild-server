@@ -1,4 +1,4 @@
-module github.com/neel1996/guild
+module github.com/neel1996/guild-server
 
 go 1.15
 

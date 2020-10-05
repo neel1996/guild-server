@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/neel1996/guild/src/api"
+	"github.com/neel1996/guild-server/src/api"
 )
 
 func main() {
