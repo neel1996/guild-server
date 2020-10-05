@@ -11,7 +11,10 @@ import (
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/getsocialdata", api.SocialAPI).Methods("GET")
+	router.HandleFunc("/getpersonaldata", api.PersonalDataApi).Methods("GET")
+
 	http.Handle("/", router)
+
 	err := http.ListenAndServe(":3000", router)
 
 	if err != nil {
